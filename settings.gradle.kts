@@ -1,5 +1,6 @@
 rootProject.name = "robot-worlds"
 
 include(
-    "client"
+    "client",
+    "server"
 )
