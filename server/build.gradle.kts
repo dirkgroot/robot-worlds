@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.7.0"
+    kotlin("plugin.serialization") version "1.7.0"
 }
 
 group = "nl.dirkgroot"
@@ -12,6 +13,8 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+
     testImplementation(kotlin("test"))
     testImplementation("org.jetbrains.kotlin:kotlin-reflect:1.7.0")
     testImplementation("com.willowtreeapps.assertk:assertk:0.25")
