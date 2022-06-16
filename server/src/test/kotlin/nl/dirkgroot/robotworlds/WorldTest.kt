@@ -22,7 +22,8 @@ class WorldTest {
     @Test
     fun `execute a launch command`() {
         val world = World()
-        world.handleRequest(Request(command = "launch"))
+        val result = world.handleRequest(Request(command = "launch"))
         assertThat(world.robotCount).isEqualTo(1)
+        assertThat(result).isEqualTo(CommandResult(result = "OK"))
     }
 }
