@@ -15,6 +15,7 @@ dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.jetbrains.kotlin:kotlin-reflect:1.7.0")
     testImplementation("com.willowtreeapps.assertk:assertk:0.25")
+    testImplementation(project(":server"))
 }
 
 tasks.test {
