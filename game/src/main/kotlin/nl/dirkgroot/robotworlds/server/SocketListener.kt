@@ -3,7 +3,7 @@ package nl.dirkgroot.robotworlds.server
 import java.net.ServerSocket
 import java.net.Socket
 
-class SocketListener(private val messageReceiver: MessageReceiver) {
+class SocketListener(private val messageHandler: MessageHandler) {
     private val serverSocket = ServerSocket(0)
 
     val port get() = serverSocket.localPort
@@ -12,7 +12,7 @@ class SocketListener(private val messageReceiver: MessageReceiver) {
         Thread {
             serverSocket.accept().use { socket ->
                 val request = receiveRequest(socket)
-                val response = messageReceiver.receive(request)
+                val response = messageHandler.receive(request)
 
                 sendResponse(socket, response)
             }

@@ -1,6 +1,6 @@
 package nl.dirkgroot.robotworlds.server
 
-class MessageReceiver(private val world: World) {
+class MessageHandler(private val world: World) {
     fun receive(jsonMessage: String): String {
         val requestMessage = RequestMessage.fromJSON(jsonMessage)
         return handleRequest(requestMessage).toJSON()

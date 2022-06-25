@@ -1,3 +1,3 @@
 package nl.dirkgroot.robotworlds.server
 
-fun startServerApplication() = SocketListener(MessageReceiver(World())).port
+fun startServerApplication() = SocketListener(MessageHandler(World())).port
