@@ -10,4 +10,10 @@ class RequestTest {
         val requestMessage = RequestMessage.fromJSON("""{ "command": "launch" }""")
         assertThat(requestMessage).isEqualTo(RequestMessage(command = "launch"))
     }
+
+    @Test
+    fun `serialize to JSON`() {
+        val json = RequestMessage("launch").toJSON()
+        assertThat(json).isEqualTo("""{"command":"launch"}""")
+    }
 }
