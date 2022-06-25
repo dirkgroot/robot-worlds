@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.7.0"
     kotlin("plugin.serialization") version "1.7.0"
+    application
 }
 
 group = "nl.dirkgroot"
@@ -18,6 +19,10 @@ dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.jetbrains.kotlin:kotlin-reflect:1.7.0")
     testImplementation("com.willowtreeapps.assertk:assertk:0.25")
+}
+
+application {
+    mainClass.set("nl.dirkgroot.robotworlds.RobotWorldsKt")
 }
 
 tasks.test {
