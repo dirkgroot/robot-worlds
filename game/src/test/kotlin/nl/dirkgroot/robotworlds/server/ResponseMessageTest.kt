@@ -4,10 +4,10 @@ import assertk.assertThat
 import assertk.assertions.isEqualTo
 import kotlin.test.Test
 
-class CommandResultTest {
+class ResponseMessageTest {
     @Test
     fun `serialize to JSON`() {
-        val json = CommandResult(result = "OK").toJSON()
+        val json = ResponseMessage(result = "OK").toJSON()
         assertThat(json).isEqualTo("""{"result":"OK"}""")
     }
 }

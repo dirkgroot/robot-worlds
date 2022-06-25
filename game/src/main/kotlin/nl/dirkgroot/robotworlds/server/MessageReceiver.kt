@@ -2,12 +2,12 @@ package nl.dirkgroot.robotworlds.server
 
 class MessageReceiver(private val world: World) {
     fun receive(jsonMessage: String): String {
-        val request = Request.fromJSON(jsonMessage)
-        return handleRequest(request).toJSON()
+        val requestMessage = RequestMessage.fromJSON(jsonMessage)
+        return handleRequest(requestMessage).toJSON()
     }
 
-    private fun handleRequest(request: Request): CommandResult {
+    private fun handleRequest(requestMessage: RequestMessage): ResponseMessage {
         world.launchRobot()
-        return CommandResult(result = "OK")
+        return ResponseMessage(result = "OK")
     }
 }

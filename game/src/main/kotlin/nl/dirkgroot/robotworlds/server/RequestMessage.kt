@@ -5,9 +5,9 @@ import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 @Serializable
-data class Request(val command: String) {
+data class RequestMessage(val command: String) {
     companion object {
-        fun fromJSON(json: String): Request {
+        fun fromJSON(json: String): RequestMessage {
             return Json.decodeFromString(json)
         }
     }
